@@ -95,7 +95,7 @@ public struct CompleteCourseView: View {
 }
 
 
-struct StarsView: View {
+public struct StarsView: View {
   private static let MAXRATING: Float = 5
   var color: Color
   var rating: Float
@@ -104,7 +104,7 @@ struct StarsView: View {
   private let emptyCount: Int
   private let halfFullCount: Int
 
-    init(color: Color, rating: Float) {
+    public init(color: Color, rating: Float) {
     self.color = color
     self.rating = rating
     fullCount = Int(rating)
@@ -112,7 +112,7 @@ struct StarsView: View {
     halfFullCount = (Float(fullCount + emptyCount) < StarsView.MAXRATING) ? 1 : 0
   }
 
-  var body: some View {
+  public var body: some View {
       HStack(spacing: 2) {
           ForEach(0..<fullCount, id: \.self) { _ in
          self.fullStar
@@ -140,7 +140,7 @@ struct StarsView: View {
 }
 
 
-struct NavigationUtil {
+public struct NavigationUtil {
   static func popToRootView() {
     findNavigationController(viewController: UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController)?
       .popToRootViewController(animated: true)

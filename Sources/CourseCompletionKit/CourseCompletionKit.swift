@@ -141,7 +141,7 @@ public struct StarsView: View {
 
 
 public struct NavigationUtil {
-  static func popToRootView() {
+  public static func popToRootView() {
     findNavigationController(viewController: UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController)?
       .popToRootViewController(animated: true)
   }

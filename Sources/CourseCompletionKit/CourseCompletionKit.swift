@@ -3,14 +3,14 @@ import SwiftUI
 public struct CompleteCourseView: View {
     var settings: CourseCompletionAssets
     var courseTitle: String
-    var completionRate: Double
-    var numPoints: Int
+    @Binding var completionRate: Double
+    @Binding var numPoints: Int
     
-    public init(settings: CourseCompletionAssets, courseTitle: String, completionRate: Double, numPoints: Int) {
+    public init(settings: CourseCompletionAssets, courseTitle: String, completionRate: Binding<Double>, numPoints: Binding<Int>) {
         self.settings = settings
         self.courseTitle = courseTitle
-        self.completionRate = completionRate
-        self.numPoints = numPoints
+        self._completionRate = completionRate
+        self._numPoints = numPoints
     }
     
     public var body: some View {
